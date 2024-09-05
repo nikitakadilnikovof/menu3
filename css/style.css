@@ -1,0 +1,810 @@
+* {
+  font-family: "Rubik", sans-serif;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+
+button {
+  cursor: pointer;
+  opacity: 0.85;
+  transition: 0.4s;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+body {
+  --color1: #F8F8F8;
+  --color2: #121212;
+  --color3: rgb(204, 121, 12);
+  --color4: rgb(121, 74, 13);
+  color: var(--color1);
+  position: relative;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+@keyframes basketButton {
+  0% {
+    background-color: var(--color2);
+  }
+
+  100% {
+    background-color: var(--color3);
+  }
+}
+
+header.main {
+  height: 100vh;
+  background-image: url(../img/header_main.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+header.main .container {
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header.main .container .header__elements {
+  text-align: center;
+}
+
+header.main .container .header__elements img {
+  margin-bottom: 20px;
+  max-width: 100px;
+}
+
+header.main .container .header__elements h1 {
+  margin-bottom: 4px;
+  font-size: 36px;
+  line-height: 100%;
+}
+
+header.main .container .header__elements p {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 100%;
+  font-weight: 800;
+}
+
+header.main .container .header__elements hr {
+  margin: 0 auto 20px auto;
+  max-width: 160px;
+  height: 1px;
+  background-color: var(--color1);
+  border: none;
+}
+
+header.main .container .header__elements .leng-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+header.main .container .header__elements .leng-text span {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 400;
+}
+
+header.main .container .header__elements .leng-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: center;
+}
+
+header.main .container .header__elements .leng-links a {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 100%;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: var(--color2);
+  border: 1px solid var(--color1);
+  color: var(--color1);
+  border-radius: 8px;
+}
+
+body.menu {
+  min-height: 100vh;
+  padding-bottom: 50px;
+  padding-top: 100px;
+  background-image: url(../img/header_main.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+body.menu nav {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(20, 20, 20, 0.8);
+  z-index: 14;
+}
+
+body.menu nav .container {
+  padding: 0 20px 0;
+}
+
+body.menu nav .container .nav__elements {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.menu nav .container .nav__elements .nav__links {
+  display: flex;
+  gap: 20px;
+}
+
+body.menu nav .container .nav__elements .nav__links a {
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 400;
+  text-decoration: none;
+  color: var(--color1);
+}
+
+body.menu nav .container .nav__elements .nav__links hr {
+  width: 1px;
+  background-color: var(--color1);
+}
+
+body.menu nav .container .nav__elements .basket {
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--color1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color2);
+  border: 3px solid var(--color1);
+  border-radius: 100%;
+  z-index: 2;
+}
+
+body.menu nav .container .nav__elements .basket_have {
+  animation: basketButton 1s infinite alternate ease-in-out;
+}
+
+body.menu nav .container .nav__elements .button_moveLeft {
+  transform: translateX(-48px);
+}
+
+body.menu nav .container .nav__elements .basket-clouse {
+  position: fixed;
+  width: 40px;
+  height: 20px;
+  top: 30px;
+  right: 20px;
+  z-index: 1;
+  background-color: transparent;
+  border: none;
+}
+
+body.menu nav .container .nav__elements .basket-clouse span {
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background-color: var(--color1);
+  display: block;
+  left: 0;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+body.menu nav .container .nav__elements .basket-clouse span:nth-child(1) {
+  top: 9px;
+}
+
+body.menu nav .container .nav__elements .basket-clouse span:nth-child(2) {
+  top: 9px;
+}
+
+body.menu nav .container .nav__elements .basket-clouse_active span {
+  opacity: 1;
+}
+
+body.menu nav .container .nav__elements .basket-clouse_active span:nth-child(1) {
+  top: 9px;
+  transform: rotate(45deg);
+}
+
+body.menu nav .container .nav__elements .basket-clouse_active span:nth-child(2) {
+  top: 9px;
+  transform: rotate(-45deg);
+}
+
+.nav__logo {
+  width: 70px;
+  position: absolute;
+  left: calc(50% - 35px);
+  top: 10px;
+}
+
+.nav__logo img {
+  width: 100%;
+}
+
+body.menu h1 {
+  font-size: 36px;
+  line-height: 100%;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+body.menu .categories-list {
+  padding: 8px 20px;
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  width: 100%;
+  background-color: rgba(22, 22, 22, 0.8);
+}
+
+body.menu .categories-list::-webkit-scrollbar {
+  height: 0;
+}
+
+body.menu .categories-list button {
+  flex-shrink: 0;
+  padding: 8px;
+  border: 1px solid var(--color1);
+  background-color: var(--color2);
+  color: var(--color1);
+  border-radius: 8px;
+  text-transform: uppercase;
+}
+
+body.menu .categories-list button._active {
+  background-color: var(--color3);
+  color: var(--color1);
+  border-color: var(--color3);
+}
+
+body.menu .dishes-list {
+  background-color: rgba(24, 24, 24, 0.4);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  transition: 0.5s;
+}
+
+body.menu .dishes-list::-webkit-scrollbar {
+  height: 8px;
+}
+
+body.menu .dishes-list::-webkit-scrollbar-thumb {
+  background-color: var(--color3);
+  border-radius: 6px;
+}
+
+body.menu .dishes-list .dishes-card {
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw - 60px);
+  max-width: 340px;
+  border: 1px solid var(--color1);
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: 0.5s;
+}
+
+body.menu .dishes-list .dishes-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info {
+  background-color: var(--color2);
+  padding: 20px 10px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 25px;
+  transition: 0.5s;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info h2 {
+  font-size: 20px;
+  line-height: 100%;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info p {
+  font-size: 14px;
+  line-height: 140%;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name p {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name p span {
+  font-weight: 400;
+  display: flex;
+  gap: 5px;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name p span.portion-name {
+  font-weight: 600;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name p span.portion-cost {
+  font-weight: 600;
+  color: var(--color3);
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name div {
+  display: flex;
+  gap: 10px;
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name div button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color1);
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name div button.portion-plus {
+  background-color: var(--color3);
+  border-color: var(--color3);
+}
+
+body.menu .dishes-list .dishes-card .dishes-card__info .dishes-card__management .portion-name div span {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color1);
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: var(--color2);
+}
+
+body.menu .dishes-list .change {
+  border: 1px solid var(--color3);
+}
+
+body.menu .dishes-list .change .dishes-card__info {
+  background-color: var(--color4);
+}
+
+.basket-box {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: var(--color2);
+  top: 0;
+  left: 100%;
+  transition: 0.5s;
+  z-index: 13;
+  padding: 80px 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.basket-box h3 {
+  font-size: 24px;
+}
+
+.basket-box .basket-list {
+  flex-grow: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.basket-box .basket-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.basket-box .basket-list::-webkit-scrollbar-thumb {
+  background-color: var(--color3);
+  border-radius: 6px;
+}
+
+.basket-box .basket-list .basket-card {
+  flex-shrink: 0;
+  width: 100%;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 4px;
+  display: flex;
+  position: relative;
+  max-width: 600px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info img {
+  width: calc(100% - 140px);
+  max-width: calc(100% - 140px);
+  border-radius: 8px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info .dishes-card__description {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info .dishes-card__description h2 {
+  font-size: 18px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info .dishes-card__description h2 i {
+  font-weight: 300;
+}
+
+.basket-box .basket-list .basket-card .basket-card__info .dishes-card__description span {
+  font-weight: 600;
+}
+
+.basket-box .basket-list .basket-card .basket-card__management {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  gap: 4px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__management button {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color1);
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+.basket-box .basket-list .basket-card .basket-card__management button.portion-plus {
+  background-color: var(--color3);
+  border-color: var(--color3);
+}
+
+.basket-box .basket-list .basket-card .basket-card__management span {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color1);
+  font-size: 20px;
+  border-radius: 4px;
+  background-color: var(--color2);
+}
+
+.basket-box .basket-list .basket-card .basket-card__cost {
+  position: absolute;
+  top: 78px;
+  width: 128px;
+  display: flex;
+  flex-direction: column;
+  color: var(--color1);
+  right: 4px;
+}
+
+.basket-box .basket-list .basket-card .basket-card__cost span {
+  font-weight: 600;
+}
+
+.basket-box .basket-box__total-price {
+  position: absolute;
+  right: 0px;
+  top: 80px;
+  width: 50%;
+  background-color: var(--color3);
+  color: var(--color1);
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  font-size: 20px;
+  border-radius: 10px 0 0 10px;
+}
+
+.basket-box .basket-box__total-price span {
+  font-weight: 600;
+}
+
+.basket-box_open {
+  left: 0;
+}
+
+._hide {
+  opacity: 0;
+}
+
+.annonce-block {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--color2);
+  padding: 20px;
+  width: 70vw;
+  max-width: 500px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border: 1px solid var(--color1);
+  transition: 0.5s;
+  z-index: 20;
+}
+
+.annonce-block h2 {
+  text-align: center;
+}
+
+.annonce-block p {
+  line-height: 120%;
+}
+
+.annonce-block button {
+  padding: 10px 40px;
+  background-color: var(--color3);
+  border-radius: 6px;
+  color: var(--color1);
+  font-size: 16px;
+  pointer-events: visible;
+}
+
+.displayNone {
+  display: none;
+}
+
+.active_no {
+  pointer-events: none;
+}
+
+footer {
+  background-color: var(--color2);
+  padding: 20px 0px 20px 0px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+footer a {
+  color: var(--color3);
+
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color1);
+}
+
+
+
+
+
+
+.feedBack-button {
+  position: fixed;
+  left: 10px;
+  height: 60px;
+  width: 60px;
+  bottom: 150px;
+  font-size: 30px;
+  background: var(--color3);
+  border: var(--color3) 1px solid;
+  border-radius: 100%;
+  color: var(--color1);
+  z-index: 12;
+  box-shadow: 0 0 60px 0 #121212;
+
+}
+
+.feedBack-bloсk {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  transform: translate(100vw, -50%);
+  background-color: var(--color2);
+  z-index: 11;
+  padding: 20px 10px 30px 10px;
+  border-radius: 16px;
+  border: 1px solid var(--color1);
+  box-shadow: 0 0 60px 0 #121212;
+  transition: 0.5s;
+}
+
+.feedBack-bloсk_active {
+  transform: translate(-50%, -50%);
+
+}
+
+.feedBack-bloсk h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.feedBack-bloсk form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedBack-bloсk textarea {
+  background-color: var(--color2);
+  border: 1px var(--color1) solid;
+  border-radius: 8px;
+  height: 200px;
+  padding: 8px;
+  font-family: "Rubik", sans-serif;
+  color: var(--color1);
+  font-size: 16px;
+  line-height: 150%;
+  outline: 0;
+}
+
+.feedBack-bloсk textarea:focus {
+  border: 1px solid var(--color3);
+}
+
+.feedBack-bloсk button {
+  background-color: var(--color3);
+  color: var(--color1);
+  border-radius: 8px;
+  height: 40px;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+form input {
+  display: none;
+}
+
+form label {
+  background-color: var(--color1);
+  color: var(--color2);
+  padding: 8px 16px 8px 16px;
+  border-radius: 6px;
+  max-width: max-content;
+}
+
+.feedBack-bloсk h3 {
+  font-size: 28px
+}
+
+
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.stars i {
+  color: var(--color3);
+  opacity: 40%;
+  font-size: 32px;
+}
+
+.review textarea {
+  width: 100%;
+}
+
+.review-form {
+  width: 100%;
+}
+
+.review-form button {
+  width: 100%;
+}
+
+.stars .star_active {
+  opacity: 100%;
+}
+
+.reviews-itom p {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--color1);
+  text-align: center;
+}
+
+.form-wrapper {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  background-color: var(--color3);
+  z-index: 10;
+  border-radius: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+
+iframe {
+  display: none;
+}
+
+.form-wrapper_active {
+  visibility: visible;
+  opacity: 1;
+}

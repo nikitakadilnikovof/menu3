@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İskenderbeyi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/0dfb09cd7e.js" crossorigin="anonymous" defer></script>
+  <script type="module" src="./js/render.js" defer></script>
+  <script src="./js/form.js" defer></script>
+</head>
+
+<body class="menu active_no">
+  <button class="feedBack-button"><i class="fa-solid fa-comment-dots"></i></button>
+  <div class="feedBack-bloсk">
+    <h3>Оставить отзыв</h3>
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJ0iAudp2-h5IRq5DodCQZAXt9hJTNSZgZnda8s8t_1xX-pQ/formResponse"
+      target="form-set" method="post"> 
+      <div class="form-wrapper">
+        Спасибо! Ваш отзыв отправлен!
+      </div>
+      <iframe name="form-set"></iframe>
+      <div class="Rating">
+        <div class="reviews-itom">
+          <p>Еда:</p>
+          <div id="footStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="reviews-itom">
+          <p>Обслуживание:</p>
+          <div id="serviceStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+      </div>
+      <input id="serviceRating" type="text" name="entry.1629191978">
+      <input id="footRating" type="text" name="entry.1273514537">
+      <textarea name="entry.358016200" id="" placeholder="Ваш комментарий" required></textarea>
+      <button type="submit" class="feedBack-bloсk__button">
+        Отправить
+      </button>
+    </form>
+
+
+  </div>
+  <nav>
+    <div class="container">
+      <div class="nav__elements">
+        <div class="nav__links">
+          <a href="./menu-tr.html">TR</a>
+          <hr>
+          <a href="./menu-en.html">EN</a>
+        </div>
+        <a href="./index.html" class="nav__logo">
+          <img src="./img/navLogo.png" alt="">
+        </a>
+        <button class="basket"><i class="fa-solid fa-basket-shopping"></i></button>
+        <button class="basket-clouse">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1>МЕНЮ</h1>
+    <div class="categories-list" id="categoriesList"> <!--JS--> </div>
+    <div class="dishes-list"></div>
+
+    <div class="basket-box">
+      <h3>Ваш заказ:</h3>
+      <div class="basket-box__list basket-list">
+        Пусто
+      </div>
+      <div class="basket-box__total-price">
+        Итого: <span id="total-price"></span>₺
+      </div>
+    </div>
+
+    <div class="annonce-block">
+      <h2>Внимание!</h2>
+      <p>
+        Выберете желаемые блюда, затем пригласите официанта и покажите ему корзину
+      </p>
+      <button id="annonce-block-clouse">Ok</button>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Разработчик сайта - &nbsp<a href="https://nikitakadilnikov.github.io/portfolio/" target="_blank">Никита
+        Kадильников</a>
+    </p>
+  </footer>
+</body>
+
+</html>

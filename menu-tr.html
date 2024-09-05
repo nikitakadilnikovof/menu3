@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İskenderbeyi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://kit.fontawesome.com/0dfb09cd7e.js" crossorigin="anonymous" defer></script>
+  <script type="module" src="./js/render.js" defer></script>
+</head>
+
+<body class="menu active_no">
+  <nav>
+    <div class="container">
+      <div class="nav__elements">
+        <div class="nav__links">
+          <a href="./menu-en.html">EN</a>
+          <hr>
+          <a href="./menu-ru.html">RU</a>
+        </div>
+        <a href="./index.html" class="nav__logo">
+          <img src="./img/navLogo.png" alt="">
+        </a>
+        <button class="basket"><i class="fa-solid fa-basket-shopping"></i></button>
+        <button class="basket-clouse">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <h1>MENÜ</h1>
+    <div class="categories-list" id="categoriesList"> <!--JS--> </div>
+    <div class="dishes-list"></div>
+
+    <div class="basket-box">
+      <h3>Siparişiniz:</h3>
+      <div class="basket-box__list basket-list">
+        Boş
+      </div>
+      <div class="basket-box__total-price">
+        Total: <span id="total-price"></span>₺
+      </div>
+    </div>
+
+    <div class="annonce-block">
+      <h2>Dikkat!</h2>
+      <p>
+        İstenilen yemekleri seçin, ardından garsonu davet edin ve ona sepeti gösterin
+      </p>
+      <button id="annonce-block-clouse">Ok</button>
+    </div>
+  </main>
+  <footer>
+    <p>
+      Web sitesi geliştiricisi- &nbsp<a href="https://nikitakadilnikov.github.io/portfolio/" target="_blank">Nikita Kadilnikov</a> 
+    </p>
+  </footer>
+</body>
+
+</html>
