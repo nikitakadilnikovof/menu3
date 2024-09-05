@@ -1,6 +1,6 @@
 import dishesList from './dataBase.js';
 
-import tableNumber from './table.js';
+const tableNumber = localStorage.getItem("table");
 console.log(tableNumber)
 // Получение текущего языка страницы
 const lang = document.documentElement.lang;
