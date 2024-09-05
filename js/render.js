@@ -1,13 +1,7 @@
 import dishesList from './dataBase.js';
 
-const url = new URLSearchParams(window.location.search);
-console.log(url)
-
-const tableNumber = url.get("table");
+import tableNumber from './table.js';
 console.log(tableNumber)
-
-
-
 // Получение текущего языка страницы
 const lang = document.documentElement.lang;
 const currencySymbol = '₺';

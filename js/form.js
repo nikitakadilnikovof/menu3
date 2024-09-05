@@ -1,9 +1,3 @@
-const url = new URLSearchParams(window.location.search);
-console.log(url)
-
-const tableNumber = url.get("table");
-console.log(tableNumber)
-
 const feedBackBloсk = document.querySelector('.feedBack-bloсk');
 const feedBackButton = document.querySelector('.feedBack-button');
 
