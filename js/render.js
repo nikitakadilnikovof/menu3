@@ -1,7 +1,6 @@
 import dishesList from './dataBase.js';
 
-const tableNumber = localStorage.getItem("table");
-console.log(tableNumber)
+
 // Получение текущего языка страницы
 const lang = document.documentElement.lang;
 const currencySymbol = '₺';
@@ -17,6 +16,11 @@ const words = {
     en: 'cost',
     tr: 'fiyat'
   },
+  totalCost: {
+    ru: 'общая стоимость',
+    en: 'total cost',
+    tr: 'toplam maliyet'
+  }
 }
 
 // Получение элемента, в который будут добавляться кнопки категорий
@@ -37,7 +41,7 @@ function createCategoryButtons() {
 
     // Добавление класса _active первой кнопке
     if (index === 0) {
-      button.classList.add('_active');
+      button.classList.addc
       renderDishes(categoryObj.dishes, categoryObj.category[lang]); // Рендерим блюда первой категории по умолчанию
     }
 
@@ -176,6 +180,7 @@ function updatePortion(button, action, dish, categoryName) {
       const portionData = {
         categoryName: categoryName,
         name: dish.name[lang],
+        nameTr: dish.name.tr,
         portion: portionName,
         cost: portionCost,
         quantity: portionNumber,
@@ -326,9 +331,9 @@ createCategoryButtons();
 
 
 const totalPriceSpan = document.querySelector('#total-price');
-function calculTotalPrice(){
+function calculTotalPrice() {
   let totalPrice = 0;
-  for (const cart of changedCart){
+  for (const cart of changedCart) {
     totalPrice += cart.totalCost
   }
   totalPriceSpan.innerText = totalPrice;
@@ -350,9 +355,51 @@ basketButtonClouse.onclick = function () {
   basketBoxOpenClouse()
 }
 
-document.querySelector('#annonce-block-clouse').onclick = function(){
+document.querySelector('#annonce-block-clouse').onclick = function () {
   document.querySelector('.annonce-block').classList.add('displayNone');
   document.querySelector('body').classList.remove('active_no');
 }
 
+const buttonOrder = document.querySelector('.button-order');
+buttonOrder.onclick = function () {
+  buttonOrder.classList.toggle('button-order_active');
+  const tableNumber = localStorage.getItem("table");
+  let orderMessage = `⚡⚡Новый заказ!\nСтол номер: ${tableNumber}.\nСписок блюд:\n`;
+  changedCart.forEach(item=>{
+    orderMessage += `\n${item.nameTr} (${item.name})\nPortıon - (${item.portion}) Tane - ${item.quantity} 💴Fiat - ${item.totalCost}₺\n`
+  })
+  let totalCostMessage = 0;
+  changedCart.forEach(item=>{
+    totalCostMessage += item.totalCost;
+  })
+  orderMessage += `\nToplam maliyet (${words.totalCost[lang]}) = ${totalCostMessage}₺`;
+  const chatId = "-1002357029746";
+  const botToken = "7220949560:AAFsKcZWU6SPwt56TX2kh3Wgp6RrgdEM9Kg";
+  const apiUrl = `https://api.telegram.org/bot${botToken}/sendMessage`;
 
+
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: orderMessage,
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.ok) {
+        alert('Заказ успешно отправлен!');
+      } else {
+        alert('Ошибка при отправке заказа. Пожалуйста, попробуйте еще раз.');
+      }
+    })
+    .catch(error => {
+      console.error('Ошибка:', error);
+      alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз.');
+    });
+}
+
+цкц

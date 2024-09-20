@@ -808,3 +808,14 @@ iframe {
   visibility: visible;
   opacity: 1;
 }
+
+.button-order{
+  color: var(--color1);
+  background: var(--color3);
+  height: 50px;
+  border-radius: 10px;
+  font-size: 28px;
+  transform: translateY(-50px);
+  flex-shrink: 0;
+  opacity: 1;
+}
