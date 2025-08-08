@@ -213,7 +213,7 @@ const dishesList = [
         "name": {
           "ru": "Мясной Донер",
           "tr": "Sade Et Döner",
-          "en": "Plain Meat Doner"
+          "en": " "
         },
         "description": {
           "ru": "",
@@ -1164,7 +1164,7 @@ const dishesList = [
     dishes: [
       {
         "img": "",
-        "name": {
+        "nameo": {
           "ru": "Кюнефе",
           "tr": "Künefe",
           "en": "Kunefe"

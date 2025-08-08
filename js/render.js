@@ -20,6 +20,20 @@ const words = {
     ru: 'общая стоимость',
     en: 'total cost',
     tr: 'toplam maliyet'
+  },
+  messages: {
+    ru: {
+      pacitiveMessage: 'Заказ успешно отправлен!',
+      errorMessage: 'Ошибка при отправке заказа. Пожалуйста, попробуйте еще раз.',
+    },
+    en: {
+      pacitiveMessage: 'The order has been sent successfully!',
+      errorMessage: 'Error sending order. Please try again.',
+    },
+    tr: {
+      pacitiveMessage: 'Sipariş başarıyla gönderildi!',
+      errorMessage: 'Sipariş gönderilirken hata oluştu. Lütfen tekrar deneyin..',
+    }
   }
 }
 
@@ -365,11 +379,11 @@ buttonOrder.onclick = function () {
   buttonOrder.classList.toggle('button-order_active');
   const tableNumber = localStorage.getItem("table");
   let orderMessage = `⚡⚡Новый заказ!\nСтол номер: ${tableNumber}.\nСписок блюд:\n`;
-  changedCart.forEach(item=>{
+  changedCart.forEach(item => {
     orderMessage += `\n${item.nameTr} (${item.name})\nPortıon - (${item.portion}) Tane - ${item.quantity} 💴Fiat - ${item.totalCost}₺\n`
   })
   let totalCostMessage = 0;
-  changedCart.forEach(item=>{
+  changedCart.forEach(item => {
     totalCostMessage += item.totalCost;
   })
   orderMessage += `\nToplam maliyet (${words.totalCost[lang]}) = ${totalCostMessage}₺`;
@@ -391,15 +405,13 @@ buttonOrder.onclick = function () {
     .then(response => response.json())
     .then(data => {
       if (data.ok) {
-        alert('Заказ успешно отправлен!');
+        alert(words.messages[lang].pacitiveMessage);
       } else {
-        alert('Ошибка при отправке заказа. Пожалуйста, попробуйте еще раз.');
+        alert(words.messages[lang].errorMessage);
       }
     })
     .catch(error => {
       console.error('Ошибка:', error);
-      alert('Произошла ошибка при отправке заказа. Пожалуйста, попробуйте еще раз.');
+      alert(words.messages[lang].errorMessage);
     });
 }
-
-цкц

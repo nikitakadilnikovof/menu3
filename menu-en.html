@@ -12,9 +12,53 @@
   <link rel="stylesheet" href="./css/style.css">
   <script src="https://kit.fontawesome.com/0dfb09cd7e.js" crossorigin="anonymous" defer></script>
   <script type="module" src="./js/render.js" defer></script>
+  <script src="./js/form.js" defer></script>
 </head>
 
 <body class="menu active_no">
+  <button class="feedBack-button"><i class="fa-solid fa-comment-dots"></i></button>
+  <div class="feedBack-bloсk">
+    <h3>Leave feedback</h3>
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdJ0iAudp2-h5IRq5DodCQZAXt9hJTNSZgZnda8s8t_1xX-pQ/formResponse"
+      target="form-set" method="post">
+      <div class="form-wrapper">
+        Thank you! Your review has been sent!
+      </div>
+      <iframe name="form-set"></iframe>
+      <div class="Rating">
+        <div class="reviews-itom">
+          <p>Food:</p>
+          <div id="footStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+        <div class="reviews-itom">
+          <p>Service:</p>
+          <div id="serviceStars" class="stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+        </div>
+
+      </div>
+      <input id="serviceRating" type="text" name="entry.1629191978">
+      <input id="footRating" type="text" name="entry.1273514537">
+      <textarea name="entry.358016200" id="" placeholder="Your comment" required></textarea>
+      <button type="submit" class="feedBack-bloсk__button">
+        Send 
+      </button>
+    </form>
+
+
+  </div>
   <nav>
     <div class="container">
       <div class="nav__elements">
@@ -47,6 +91,7 @@
       <div class="basket-box__total-price">
         Total: <span id="total-price"></span>₺
       </div>
+      <button class="button-order">Submit an order</button>
     </div>
 
     <div class="annonce-block">
@@ -58,9 +103,6 @@
     </div>
   </main>
   <footer>
-    <p>
-      Website developer - &nbsp<a href="https://nikitakadilnikov.github.io/portfolio/" target="_blank">Nikita Kadilnikov</a> 
-    </p>
   </footer>
 </body>
 
